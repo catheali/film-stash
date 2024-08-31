@@ -1,9 +1,10 @@
-// src/store/index.ts
 import { createStore } from 'vuex';
 import movies from './modules/movies';
+import { RootState } from  '@/types';
 
-export default createStore({
+
+export default createStore<RootState>({
   modules: {
-    movies,
-  },
+    movies
+  }
 });
