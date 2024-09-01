@@ -1,28 +1,64 @@
 <template>
-
-	<div class="custom-card">
+	<div class="custom-card" @click="goToDetails()">
 		<div class="poster">
 
+			<img :src="getImageUrl(movie.poster_path)" alt="">
 			
 			<!-- <img :src="url" alt="" /> -->
 		</div>
 		<div class="details">
-			<span class=" movie-name">Nós </span>
+			<span class=" movie-name">{{ movie.title }}</span>
+
+
+			<div class="movie-details">
+				<p> Media de Votos:
+					{{ movie.vote_average }}
+				</p>
+
+				<p> Quantidade de Votos:
+					{{ movie.vote_count }}
+				</p>
+
+				<p> POpularidade:
+					{{ movie.popularity }}
+
+				</p>
+			</div>
 			
 		</div>
+		
 	</div>
 
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, PropType } from 'vue'
+import { useRouter } from 'vue-router'
+import { Movie } from '@/types'
 
 export default defineComponent({
 	name:"MovieCard",
-	setup () {
-		
+	props: {
+	  movie: {
+		  type: Object as PropType<Movie>,
+		  required: true
+		}
+	},
+	setup (props) {
+		const BASE_IMAGE_URL = 'http://image.tmdb.org/t/p/w500'
 
-		return {}
+		const router = useRouter()
+
+		const getImageUrl = (path: string) => `${BASE_IMAGE_URL}${path}`
+
+		const goToDetails = () => {
+		  router.push({ name: 'movie', params: { id: props.movie.id } })
+		}
+		
+		return {
+			getImageUrl,
+			goToDetails
+		}
 	}
 })
 </script>
@@ -32,9 +68,9 @@ export default defineComponent({
 	position:relative;
 	width: 320px;
 	height: 428px;
-	background: rgb(155, 15, 15);
+	background: #681519;
 	border-radius: 20px;
-	box-shadow: 0 15px 35px rgba(131, 24, 24, 0.677);
+	box-shadow: 0 15px 35px #681519(6, 1, 1, 0.677);
 	&:hover {
 		.poster{
 			&::before{
@@ -48,9 +84,13 @@ export default defineComponent({
 		.details{
 			bottom: 320px;
 			.movie-name{
-				color: rgb(238, 233, 233) !important;
-				font-size: 50px;
+				color: rgb(252, 252, 252) !important;
+				font-size: 1rem;
 				transition: 0.5s;
+			}
+
+			span {
+				color: $white;
 			}
 			
 		}
@@ -64,7 +104,7 @@ export default defineComponent({
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			background: linear-gradient(0deg, #770f0f 40%, transparent);
+			background: linear-gradient(0deg, #681519 40%, transparent);
 			transition: 0.5s;
 			z-index: 1;
 			bottom: -200px;
@@ -79,13 +119,17 @@ export default defineComponent({
 		width: 100%;
 		bottom: 0;
 		transition: 0.5s;
+		
+	
 		.movie-name{
-			font-size: 70px;
+			font-size: 2rem;
 			transition: 0.5s;
-			.firstName{
-				font-size:  50px;
-			}
+
 		}
+		span {
+				color: $white;
+			}
 	}
+
 }
 </style>
