@@ -1,6 +1,5 @@
-
 import { ActionTree, ActionContext } from 'vuex';
-import { RootState, MoviesState, Movie, ApiResponse } from '@/types';
+import { RootState, MoviesState, MovieDetails, ApiResponse } from '@/types';
 import apiService from '@/services/apiService';
 
 export const actions: ActionTree<MoviesState, RootState> = {
