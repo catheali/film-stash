@@ -1,8 +1,18 @@
+//@classes
+
+.card {
+	margin-top: 3rem; 
+	display: flex; 
+	justify-content: center;
+	margin-bottom: 6rem;   
+}
+
 //@color_variables
 
 $red: red;
 $green: green;
 $white: #fff;
+$color_primmary: #b69191;
 
 //@mixins
 @mixin cinematic-gradient($start-color: #341313, $end-color: #1c0401) {
