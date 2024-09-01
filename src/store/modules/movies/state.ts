@@ -10,5 +10,5 @@ export const state: MoviesState = {
     code: null,
   },
   totalPages: 0,
-  totalResults: 0
+  totalResults: 0,
 };

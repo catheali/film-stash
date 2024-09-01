@@ -8,14 +8,13 @@ export const actions: ActionTree<MoviesState, RootState> = {
 	async fetchMovies({ commit }, endpoint: string) {
 		try {
 		  const response = await apiService.getData(endpoint);
-		  const movies: ApiResponse = response.data;
-		  commit('setMovies', movies.results) 
-		  commit('setApiResponse', movies);
-		  commit('setTotalPages', movies.total_pages)
-		  commit('setTotalResults', movies.total_results)
+		  const movies = response.data;
+		  commit('setMovies', movies.results);
+		  commit('setTotalPages', movies.total_pages);
+		  commit('setTotalResults', movies.total_results);
 		} catch (error) {
-		  console.error('Erro ao buscar filmes:', error.message);
-		  commit('setError', error)
+		  console.error('Error', error.message);
+		  commit('setError', error);
 		}
 	},
 
