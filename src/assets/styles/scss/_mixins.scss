@@ -1,0 +1,29 @@
+@mixin cinematic-gradient($start-color: #681519, $end-color: #888175) {
+	background: linear-gradient(135deg, $start-color, $end-color);
+	background-size: 400% 400%;
+	animation: gradientAnimation 15s ease infinite;
+  
+	@keyframes gradientAnimation {
+	  0% { background-position: 0% 50%; }
+	  50% { background-position: 100% 50%; }
+	  100% { background-position: 0% 50%; }
+	}
+  }
+
+  @mixin transition($time) {
+	transition: background-color $time;
+  }
+  
+  @mixin button-style($bg-color, $hover-color) {
+	background-color: $bg-color;
+	color: white;
+	padding: $button-padding;
+	border: none;
+	cursor: pointer;
+	border-radius: $border-radius;
+  
+	&:hover {
+	  background-color: $hover-color;
+	}
+  }
+  
