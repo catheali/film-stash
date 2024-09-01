@@ -1,8 +1,10 @@
 <template>
 	<header>
 		<div class="logo">
-			<span>Film</span>
-			<span>Stash</span>
+			<router-link to="/">
+				<span>Film</span>
+				<span>Stash</span>
+			</router-link>
 		</div>
 		<nav>	
 			<ul>
