@@ -13,6 +13,6 @@ const apiClient: AxiosInstance = axios.create({
 
 export default {
 	getData(endpoint: string) {
-		return apiClient.get<ApiResponse>(endpoint);
+		return apiClient.get(endpoint);
 	}
 }
