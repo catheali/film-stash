@@ -29,5 +29,13 @@ export const actions: ActionTree<MoviesState, RootState> = {
 		  commit('setError', error)
 		}
 	},
+	addToFavorites({ commit }, movieId: number) {
+		commit('addFavoriteMovie', movieId);
+		alert('Movie was sucessfully added to favorites!')
+	}, 
+	removeFavorites({commit}) {
+		commit('removeFavoriteMovies');
+		alert('All movies was removed from favorites')
+	}
 
 };
