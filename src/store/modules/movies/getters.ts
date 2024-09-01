@@ -6,4 +6,6 @@ export const getters: GetterTree<MoviesState, RootState> = {
   favoriteMovies: (state) => state.favoriteMovies,
   getApiResponse: (state) => state.apiResponse,
   getError: (state) => state.error,
+  getTotalResults: (state) => state.totalResults,
+  getTotalPages: (state) => state.totalPages,
 };

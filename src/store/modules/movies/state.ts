@@ -8,5 +8,7 @@ export const state: MoviesState = {
 	success: null,
     message: null,
     code: null,
-  }
+  },
+  totalPages: 0,
+  totalResults: 0
 };

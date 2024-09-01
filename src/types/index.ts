@@ -7,6 +7,8 @@ export interface MoviesState {
 		message: string | null,
 		code: number | null
 	};
+	totalPages: number;
+	totalResults: number;
 }
 
 export interface RootState {

@@ -17,4 +17,10 @@ export const mutations: MutationTree<MoviesState> = {
   setError(state: MoviesState, error: { message: string; code: number }) {
     state.error = error;
   },
+  setTotalPages(state, pages: number) {
+    state.totalPages = pages;
+  },
+  setTotalResults(state, results: number) {
+    state.totalResults = results;
+  },
 };
