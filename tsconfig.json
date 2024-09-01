@@ -1,11 +1,11 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
-    }
-  ]
+	"compilerOptions": {
+	  "module": "ES2020",      
+	  "moduleResolution": "node",
+	  "baseUrl": ".",
+	  "paths": {
+		"@/*": ["src/*"]
+	  },
+	  "types": ["vuex"]
+	}
 }

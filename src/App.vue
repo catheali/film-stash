@@ -1,13 +1,10 @@
 <script setup lang="ts">
+import NavBar from '@/components/NavBar.vue'
+import Footer from './components/Footer.vue'
 </script>
 
 <template>
-  <div>
-	<h1>Olá mundo</h1>
-  </div>
-   
+	<NavBar/>
+	<RouterView />
+	<Footer/>
 </template>
-
-<style scoped>
-
-</style>
