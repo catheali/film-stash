@@ -14,7 +14,7 @@ export const mutations: MutationTree<MoviesState> = {
   setApiResponse(state, response: ApiResponse) {
     state.apiResponse = response;
   },
-  setError(state: MoviesState, error: { message: string; code: number }) {
+  setError(state: MoviesState, error: { success: boolean, message: string, code: number }) {
     state.error = error;
   },
   setTotalPages(state, pages: number) {

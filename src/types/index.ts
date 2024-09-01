@@ -3,7 +3,7 @@ export interface MoviesState {
 	favoriteMovies: Movie[];  
 	apiResponse: ApiResponse | null;
 	error: {
-		sucesss: boolean | null
+		success: boolean | null
 		message: string | null,
 		code: number | null
 	};
