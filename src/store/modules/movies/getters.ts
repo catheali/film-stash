@@ -8,4 +8,5 @@ export const getters: GetterTree<MoviesState, RootState> = {
   getError: (state) => state.error,
   getTotalResults: (state) => state.totalResults,
   getTotalPages: (state) => state.totalPages,
+  getSelectedMovie: (state) => state.selectedMovie
 };

@@ -18,14 +18,21 @@ export const actions: ActionTree<MoviesState, RootState> = {
 		}
 	},
 
-	async fetchImageUrl({ commit }) {
+	async fetchDetails({ commit }, id: number) {
 		try {
-		  const response = await apiService.getData('configuration');
-		  const movies: ApiResponse = response.data;
-		  commit('setMovies', movies.results) 
-		  commit('setApiResponse', movies);
+		  const response = await apiService.getData(id.toString());
+		  const movieData: MovieDetails = {
+			id: response.data.id,
+			title: response.data.title,
+			poster_path: response.data.poster_path,
+			overview: response.data.overview,
+			genres: response.data.genres,
+			release_date: response.data.release_date,
+			revenue: response.data.revenue,
+		  };
+		  commit('setSelectedMovie', movieData);
 		} catch (error) {
-		  console.error('Erro ao buscar filmes:', error.message);
+		  console.error('Error:', error.message);
 		  commit('setError', error)
 		}
 	},
