@@ -11,7 +11,7 @@
 			<button @click="nextPage" :disabled="currentPage === totalPages">Next</button>
 		</div>
 		<div class="movie-gallery"  >
-			<movie-card v-for="movie in movies" :key="movie.id" :movie="movie" />
+			<MovieCard v-for="movie in movies" :key="movie.id" :movie="movie" />
 		</div>	
 		
 	</div>
@@ -35,9 +35,8 @@
 		};
 		
 		const movies = computed(() => store.getters.allMovies);
-		const totalPages = computed(() => store.getters.getTotalPages); ;
+		const totalPages = computed(() => store.getters.getTotalPages);
 		
-       console.log(totalPages.value)
 		const visiblePages = computed(() => {
 			const startPage = Math.max(1, currentPage.value - 1);
 			const endPage = Math.min(totalPages.value, startPage + 2);
@@ -82,42 +81,6 @@
 	});
 </script>
   
-  <style lang="scss" scoped>
-
-  .movie-gallery{
-	display: flex;
-	gap: 100px;
-	flex-wrap: wrap;
-	justify-content: center;
-  }
-
-  .title-movies {
-	text-align: center;
-	font-family: Limelight, sans-serif;
-  }
-
-  .pagination {
-  display: flex;
-  gap: 8px;
-  margin-top: 20px;
-}
-
-.pagination button {
-  padding: 8px 12px;
-  border: none;
-  cursor: pointer;
-  background-color: #df0303;
-}
-
-.pagination button.active {
-  font-weight: bold;
-  background-color: #830707;
-}
-
-.pagination button:disabled {
-  cursor: not-allowed;
-  background-color: #f90000;
-}
-
+<style lang="scss" scoped>
+	@import "@/assets/styles/scss/app.scss";
 </style>
-  

@@ -20,46 +20,7 @@
 	name: 'Footer',
   });
   </script>
-  
-  <style lang="scss" scoped>
-  .footer {
-	color: #fff;
-	padding: 20px 0;
-	text-align: center;
-  
-	.container {
-	  max-width: 1200px;
-	  margin: 0 auto;
-	  padding: 0 20px;
-	}
-  
-	p {
-	  margin: 0;
-	}
-  
-	.social-links {
-	  list-style-type: none;
-	  padding: 0;
-	  margin: 10px 0 0;
-  
-	  li {
-		display: inline;
-		margin-right: 10px;
-  
-		a {
-		  color: #fff;
-		  text-decoration: none;
-  
-		  &:hover {
-			text-decoration: underline;
-		  }
-		}
-	  }
-	}
 
-	& {
-		@include cinematic-gradient(); 
-	}
-  }
-  </style>
-  
+<style lang="scss" scoped>
+	@import "@/assets/styles/scss/app.scss";
+</style>
