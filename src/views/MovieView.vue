@@ -8,7 +8,11 @@
 			<h1>{{ selectedMovie.title }}</h1>
 			<p>{{ selectedMovie.overview }}</p>
 			<div class="info-box">
-				<p>Genre: {{ selectedMovie.genres.map(genre => genre.name).join(', ') }}</p>
+				<p>Genre: 
+					<div class="chip" v-for="genre in selectedMovie.genres">
+						{{ genre.name }}
+					</div>
+				</p>
 				<p>Release Date: {{ selectedMovie.release_date }}</p>
 				<p>Revenue: ${{ selectedMovie.revenue.toLocaleString() }}</p>
 				<AddToFavoritesButton :id="selectedMovie.id" /> 
