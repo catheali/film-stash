@@ -95,8 +95,8 @@ a, .router-link, .router-link-active {
 	align-items: center;
 	padding: 4px 8px;
 	border-radius: 14px;
-	background-color: $info-box-background;
-	color: white;
+	border: 1px solid $info-box-background;
+	color: black;
 	font-size: 1rem;
 	margin: 5px;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
