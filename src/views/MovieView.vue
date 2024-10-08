@@ -8,6 +8,10 @@
 			<h1>{{ selectedMovie.title }}</h1>
 			<p>{{ selectedMovie.overview }}</p>
 			<div class="info-box">
+				<div class="add-to-favorite">
+					<AddToFavoritesButton :id="selectedMovie.id" /> 
+					<span> Add to your favorites !</span>
+				</div>
 				<p>Genre: 
 					<div class="chip" v-for="genre in selectedMovie.genres">
 						{{ genre.name }}
@@ -15,7 +19,6 @@
 				</p>
 				<p>Release Date: {{ selectedMovie.release_date }}</p>
 				<p>Revenue: ${{ selectedMovie.revenue.toLocaleString() }}</p>
-				<AddToFavoritesButton :id="selectedMovie.id" /> 
 			</div>
 		</div>
 	</div>
