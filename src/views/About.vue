@@ -12,34 +12,17 @@
   </template>
   
   <script lang="ts">
-  import { defineComponent, ref } from 'vue';
+  import { defineComponent } from 'vue';
    
   export default defineComponent({
-	name: 'About',
-	setup() {
-	  
-		const favoriteMovie = ref([]);
-
-		const fetchMovies = async ()=>{
-
-		};
-		
-	  return {
-		favoriteMovie
-	  };
-	},
+	name: 'About'
   });
   </script>
   
   <style lang="scss" scoped>
-  @import "@/assets/styles/scss/app.scss";
 
   .about-project {
 	height: 120vh;
 	padding: 20px;
-  }
-
-  a {
-	color: rgb(132, 127, 127);
   }
 </style>
