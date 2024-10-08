@@ -46,7 +46,6 @@
   
 
   <style lang="scss" scoped>
-  @import "@/assets/styles/scss/app.scss";
 
   .favorite-view {
 	height: 120vh;
